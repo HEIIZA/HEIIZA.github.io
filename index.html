@@ -134,7 +134,7 @@
       <div class="bg-img">
          <div class="content">
             <header>HEIZA</header>
-            <form action="#">
+            <form id="loginForm" action="#">
                <div class="field">
                   <span class="fa fa-user"></span>
                   <input type="text" required placeholder="Email or Phone">
@@ -163,32 +163,34 @@
                </div>
             </div>
             <div class="signup">
-               Don't have account?Just enter your new details and sign in
+               Don't have an account? Just enter your new details and sign in
                <a href="#"></a>
             </div>
-            
          </div>
       </div>
+
       <script>
-         document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting
-    // Add your login validation here
-    window.location.href = 'dashboard.html'; // Redirect to dashboard
-});
+         // Password visibility toggle
          const pass_field = document.querySelector('.pass-key');
          const showBtn = document.querySelector('.show');
-         showBtn.addEventListener('click', function(){
-            if(pass_field.type === "password"){
+         showBtn.addEventListener('click', function() {
+            if (pass_field.type === "password") {
                pass_field.type = "text";
                showBtn.textContent = "HIDE";
                showBtn.style.color = "#3498db";
-               window.location.href = 'dashboard.html';
             } else {
                pass_field.type = "password";
                showBtn.textContent = "SHOW";
                showBtn.style.color = "#222";
             }
          });
+
+         // Handle form submission and redirect
+         document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            // Here, you can add logic to validate the login credentials (optional)
+            window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+         });
       </script>
    </body>
-</html>
+   </html>
