@@ -170,6 +170,11 @@
          </div>
       </div>
       <script>
+         document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
+    // Add your login validation here
+    window.location.href = 'dashboard.html'; // Redirect to dashboard
+});
          const pass_field = document.querySelector('.pass-key');
          const showBtn = document.querySelector('.show');
          showBtn.addEventListener('click', function(){
